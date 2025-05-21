@@ -1,0 +1,21 @@
+name: My event Worflow
+on:
+  pull request:
+    types:
+    - closed
+  branches:
+    - "master"
+  paths:
+    - "**.py"
+jobs:
+  model-ci:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Model
+      run: echo "Build Model in CI Pipeline
+  modelo-cd:
+     needs: model-ci
+     runs-on: ubuntu-latest
+     steps:
+     - name: Deploy model
+       run: echo "Build Model in CD Pipeline"
