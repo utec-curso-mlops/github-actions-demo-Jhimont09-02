@@ -7,9 +7,10 @@ env:
   DB_NAME: db-name
 jobs:
   model-ci:
+    environment: exploracion
     env:
       DB_ADDRESS: my.database.address
-      DB_USERNAME: username
+      DB_USERNAME: ${{secrets.DB_USERNAME}}
       DB_PASSWORD: password
       DB_PORT: 8080
     runs-on: ubuntu-latest
